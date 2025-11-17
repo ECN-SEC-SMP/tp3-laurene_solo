@@ -1,6 +1,13 @@
-#include <stdio.h>
-#include <Point_template.h>
 #pragma once
+
+#include <stdio.h>
+#include "Point_template.hpp"
+
+template <typename Tforme>
+class Forme;
+
+template <typename Tforme>
+std::ostream& operator<<(std::ostream &o, Forme<Tforme> const &R);
 
 template <typename Tforme>
 class Forme
@@ -15,9 +22,13 @@ class Forme
 };
 
 
-
-
-template <typename T>
-Forme::Forme(){
+template <typename Tforme>
+Forme<Tforme>::Forme(){
     this->centre=centre;
+}
+
+template <typename Tforme>
+std::ostream& operator<<(std::ostream &o, Forme<Tforme> const &R) {
+    o<<R.centre<<std::endl;
+    return o;
 }

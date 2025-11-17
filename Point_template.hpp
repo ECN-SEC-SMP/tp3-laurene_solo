@@ -1,5 +1,5 @@
-#include <stdio.h>
 #pragma once
+#include <stdio.h>
 
 template<typename T>
 class Point_template 
@@ -56,4 +56,10 @@ void Point_template<T>::set_abscisse(T a){
 template <typename T>
 void Point_template<T>::set_ordonnee(T b){
     this->ordonnee=b;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream &o, Point_template<T> const &R) {
+    o<<"L'abscisse : "<<R.abscisse<<"et l'ordonnée : " <<R.ordonnee<<std::endl;
+    return o;
 }
