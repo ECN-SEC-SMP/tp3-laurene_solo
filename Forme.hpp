@@ -17,8 +17,8 @@ class Forme
 
     public :
         Forme();
-        Tforme perimetre();
-        Tforme surface();
+        virtual Tforme perimetre() = 0;
+        virtual Tforme surface() = 0;
 };
 
 
