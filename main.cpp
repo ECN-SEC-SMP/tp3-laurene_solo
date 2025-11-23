@@ -3,6 +3,7 @@
 #include "Point_template.hpp"
 #include "Rectangle.hpp"
 #include "Carre.hpp"
+#include "listeFormes.hpp"
 
 int main(){
     // Partie 3 :
