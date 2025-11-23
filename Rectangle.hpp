@@ -1,5 +1,4 @@
 #pragma once
-#include <stdio.h>
 #include "Forme.hpp"
 
 template <typename T>
@@ -14,6 +13,7 @@ class Rectangle : public Forme<T>
 
         T perimetre() override;
         T surface() override;
+        std::string type();
 };
 
 template <typename T>
@@ -31,4 +31,16 @@ template <typename T>
 T Rectangle<T>::surface() {
     return hauteur*largeur;
 }
+
+template <typename T>
+std::string Rectangle<T>::type(){
+    return "Rectangle";
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream &o, Rectangle<T> const &R) {
+    o<<"type : "<<R.type()<<" | hauteur : "<<R.hauteur<<" | largeur : "<<R.largeur<<std::endl;
+    return o;
+}
+
 

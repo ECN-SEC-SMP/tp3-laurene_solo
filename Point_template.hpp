@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include <iostream>
 
 template<typename T>
 class Point_template 
@@ -8,6 +9,7 @@ class Point_template
         T abscisse;
         T ordonnée;
     public :
+        Point_template();
         Point_template(T x, T y);
         Point_template(const Point_template<T>& a);
         ~Point_template();
@@ -19,6 +21,12 @@ class Point_template
         void set_abscisse(T new_abscisse);
         void set_ordonnee(T new_ordonnee);
 };
+
+template <typename T>
+Point_template<T>::Point_template(){}
+
+template <typename T>
+Point_template<T>::~Point_template(){}
 
 template <typename T>
 Point_template<T>::Point_template(T x, T y){
