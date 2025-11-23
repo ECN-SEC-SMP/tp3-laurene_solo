@@ -2,29 +2,29 @@
 #include "Rectangle.hpp"
 
 template <typename T>
-class Carree : public Rectangle<T>
+class Carre : public Rectangle<T>
 {
     private :
 
     public : 
-        Carree();
-        ~Carree();
+        Carre(double cote);
+        ~Carre();
         std::string type();
 };
 
 template <typename T>
-Carree<T>::Carree(){}
+Carre<T>::Carre(double cote) : Rectangle<T>(cote, cote) {}
 
 template <typename T>
-Carree<T>::~Carree(){}
+Carre<T>::~Carre(){}
 
 template <typename T>
-std::string Carree<T>::type(){
-    return "Carrée";
+std::string Carre<T>::type(){
+    return "Carré";
 }
 
 template <typename T>
-std::ostream& operator<<(std::ostream &o, Carree<T> const &R) {
+std::ostream& operator<<(std::ostream &o, Carre<T> const &R) {
     o<<"type : "<<R.type()<<" | hauteur : "<<R.hauteur<<" | largeur : "<<R.largeur<<std::endl;
     return o;
 }

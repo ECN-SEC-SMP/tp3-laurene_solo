@@ -7,7 +7,7 @@ class Point_template
 {
     private :
         T abscisse;
-        T ordonnée;
+        T ordonnee;
     public :
         Point_template();
         Point_template(T x, T y);
@@ -39,7 +39,6 @@ Point_template<T>::Point_template(const Point_template<T>& a){
     this->x = a.x;
 }
 
-
 template <typename T>
 void Point_template<T>::translater(T a, T b){
     this->abscisse += a;
@@ -70,4 +69,9 @@ template <typename T>
 std::ostream& operator<<(std::ostream &o, Point_template<T> const &R) {
     o<<"L'abscisse : "<<R.abscisse<<"et l'ordonnée : " <<R.ordonnee<<std::endl;
     return o;
+}
+
+// Partie 4 : Spécification de la fonction translater
+void Point_template<std::string>::translater(std::string a, std::string b){
+    std::swap(this->abscisse, this->ordonnee);
 }

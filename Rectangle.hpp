@@ -4,11 +4,11 @@
 template <typename T>
 class Rectangle : public Forme<T>
 {
-    private :
+    protected :
         double largeur;
         double hauteur;
     public :
-        Rectangle();
+        Rectangle(double h, double l);
         ~Rectangle();
 
         T perimetre() override;
@@ -17,7 +17,10 @@ class Rectangle : public Forme<T>
 };
 
 template <typename T>
-Rectangle<T>::Rectangle(){}
+Rectangle<T>::Rectangle(double h, double l){
+    hauteur = h;
+    largeur = l;
+}
 
 template <typename T>
 Rectangle<T>::~Rectangle(){}
